@@ -1,0 +1,9 @@
+# Ortam değişkenleri ve gizli şifreler
+.env
+
+# Sanal ortam klasörü
+venv/
+
+# Python önbellek dosyaları
+__pycache__/
+*.pyc
