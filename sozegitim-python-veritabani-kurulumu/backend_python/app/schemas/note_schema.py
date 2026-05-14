@@ -1,13 +1,20 @@
-# app/schemas/note_schema.py
-# Note verisi için Pydantic şeması
-
 from pydantic import BaseModel
+from datetime import datetime
+from typing import Optional
 
-class NoteSchema(BaseModel):
+# Kullanıcı yeni bir kelime kaydederken bize göndereceği veriler
+class NoteCreate(BaseModel):
+    word: str
+    translation: str
+    personal_note: Optional[str] = None
+
+# Kullanıcıya kendi çalışma listesini (notlarını) gönderirken kullanacağımız format
+class NoteResponse(BaseModel):
     id: int
-    title: str
-    content: str
-    user_id: int
+    word: str
+    translation: str
+    personal_note: Optional[str] = None
+    created_at: datetime
 
     class Config:
-        orm_mode = True
+        from_attributes = True

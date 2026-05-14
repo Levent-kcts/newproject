@@ -5,12 +5,14 @@ class HomeScreen extends StatelessWidget {
   final VoidCallback onGoDictionary;
   final VoidCallback onGoQuiz;
   final VoidCallback onGoProfile;
+  final VoidCallback onGoMatching;
 
   const HomeScreen({
     super.key,
     required this.onGoDictionary,
     required this.onGoQuiz,
     required this.onGoProfile,
+    required this.onGoMatching,
   });
 
   @override
@@ -236,7 +238,7 @@ class HomeScreen extends StatelessWidget {
 
   Widget _bigStartButton() {
     return GestureDetector(
-      onTap: onGoQuiz,
+      onTap: onGoMatching,
       child: Container(
         width: 150,
         height: 150,

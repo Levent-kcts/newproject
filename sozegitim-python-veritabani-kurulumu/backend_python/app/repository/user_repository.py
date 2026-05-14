@@ -22,3 +22,10 @@ class UserRepository:
         db.commit()
         db.refresh(db_user)
         return db_user
+
+    def get_user_by_id(self, db: Session, user_id: int):
+        return db.query(User).filter(User.id == user_id).first()
+
+    def get_top_users(self, db: Session, limit: int = 10):
+        # Kullanıcıları XP'ye göre büyükten küçüğe sırala ve ilk 10'u getir
+        return db.query(User).order_by(User.xp.desc()).limit(limit).all()
