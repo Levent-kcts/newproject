@@ -9,6 +9,6 @@ class WordRepositoryImpl implements WordRepository {
 
   @override
   Future<Word> searchWord(String term) {
-    return remoteDataSource.getWordDefinition(term);
+    return remoteDataSource.fetchWord(term);
   }
 }

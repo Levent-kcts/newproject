@@ -208,9 +208,9 @@ class DictionaryScreen extends StatelessWidget {
                     vertical: 6,
                   ),
                   decoration: BoxDecoration(
-                    color: color.withAlpha(31),
+                    color: color.withOpacity(0.12),
                     borderRadius: BorderRadius.circular(18),
-                    border: Border.all(color: color.withAlpha(64)),
+                    border: Border.all(color: color.withOpacity(0.25)),
                   ),
                   child: Text(
                     '$wordCount kelime',
@@ -245,7 +245,7 @@ class DictionaryScreen extends StatelessWidget {
         border: Border.all(color: color, width: 3),
         boxShadow: [
           BoxShadow(
-            color: color.withAlpha(56),
+            color: color.withOpacity(0.22),
             blurRadius: 18,
             spreadRadius: 1,
           ),

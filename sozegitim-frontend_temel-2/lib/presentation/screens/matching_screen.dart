@@ -172,7 +172,7 @@ class _MatchingScreenState extends State<MatchingScreen>
                       color: AppColors.cardNavy,
                       boxShadow: [
                         BoxShadow(
-                          color: AppColors.yellow.withAlpha(115),
+                          color: AppColors.yellow.withOpacity(0.45),
                           blurRadius: 22,
                           spreadRadius: 3,
                         ),
@@ -534,7 +534,7 @@ class MatchingCirclePainter extends CustomPainter {
     final basePaint = Paint()
       ..style = PaintingStyle.stroke
       ..strokeWidth = 1.2
-      ..color = AppColors.cardBorder.withAlpha(115);
+      ..color = AppColors.cardBorder.withOpacity(0.45);
 
     final bluePaint = Paint()
       ..style = PaintingStyle.stroke
@@ -568,7 +568,7 @@ class MatchingCirclePainter extends CustomPainter {
       yellowPaint,
     );
 
-    final dotPaint = Paint()..color = AppColors.blue.withAlpha(140);
+    final dotPaint = Paint()..color = AppColors.blue.withOpacity(0.55);
 
     for (int i = 0; i < 18; i++) {
       final angle = (2 * pi / 18) * i;

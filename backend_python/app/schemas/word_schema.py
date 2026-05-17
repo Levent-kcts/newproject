@@ -13,5 +13,6 @@ class WordResponse(BaseModel):
     
     word: str
     translation: str
+    level: str  # YENİ EKLENDİ
     phonetic: Optional[str] = None
     meanings: List[Meaning]

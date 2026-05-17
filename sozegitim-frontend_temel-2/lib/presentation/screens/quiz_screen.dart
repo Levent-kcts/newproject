@@ -200,15 +200,17 @@ class _QuizScreenState extends State<QuizScreen> {
 
     if (selectedIndex != null) {
       if (isSelected && isCorrect) {
-        bgColor = Colors.green.withAlpha(191);
+        bgColor = Colors.green.withOpacity(0.75);
         borderColor = Colors.greenAccent;
         icon = Icons.check_circle;
       } else if (isSelected && !isCorrect) {
-        bgColor = Colors.red.withAlpha(191);
+        bgColor = Colors.red.withOpacity(0.75);
         borderColor = Colors.redAccent;
         icon = Icons.cancel;
       } else if (isCorrect) {
-        bgColor = Colors.green.withAlpha(89);
+        bgColor = Colors.green.withOpacity(0.35);
+        borderColor = Colors.greenAccent;
+        icon = Icons.check_circle_outline;
       }
     }
 

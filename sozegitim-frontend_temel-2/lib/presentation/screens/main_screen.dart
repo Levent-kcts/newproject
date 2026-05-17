@@ -4,6 +4,8 @@ import 'dictionary_screen.dart';
 import 'profile_screen.dart';
 import 'quiz_screen.dart';
 import 'matching_screen.dart';
+import 'settings_screen.dart';
+import 'personal_info_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -45,6 +47,18 @@ class _MainScreenState extends State<MainScreen> {
     });
   }
 
+  void goSettings() {
+    setState(() {
+      selectedIndex = 5;
+    });
+  }
+
+  void goPersonalInfo() {
+    setState(() {
+      selectedIndex = 6;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final pages = [
@@ -65,10 +79,21 @@ class _MainScreenState extends State<MainScreen> {
 
       ProfileScreen(
         onGoHome: goHome,
+        onGoSettings: goSettings,
       ),
 
       MatchingScreen(
         onGoHome: goHome,
+      ),
+
+      SettingsScreen(
+        onGoHome: goHome,
+        onGoBack: goProfile,
+        onGoPersonalInfo: goPersonalInfo,
+      ),
+
+      PersonalInfoScreen(
+        onGoBack: goSettings,
       ),
     ];
 
